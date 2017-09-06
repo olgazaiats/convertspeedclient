@@ -17,7 +17,7 @@ public class SoapClientHandlerLog implements SOAPHandler<SOAPMessageContext> {
 
     private static Logger logger = LoggerFactory.getLogger(SoapClientHandlerLog.class);
 
-    ByteArrayOutputStream out = new ByteArrayOutputStream();
+    private ByteArrayOutputStream out = new ByteArrayOutputStream();
 
     @Override
     public Set<QName> getHeaders() {
@@ -65,6 +65,7 @@ public class SoapClientHandlerLog implements SOAPHandler<SOAPMessageContext> {
         } catch (SOAPException e) {
             e.printStackTrace();
         }
+        out.reset();
         return true;
     }
 

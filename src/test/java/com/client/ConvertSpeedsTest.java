@@ -43,8 +43,8 @@ public class ConvertSpeedsTest {
         Assert.assertTrue(Double.isInfinite(convertsSpeed5));
     }
 
-    //Negative test. Works, but after it positive fail
-    /*@Test(expectedExceptions = SOAPFaultException.class)
+    //Negative test
+    @Test(expectedExceptions = SOAPFaultException.class)
     public void convertSpeedInvalidUnitTest(){
         try{
             convertClient.convertSpeed(999, KILOMETERS_PERHOUR, SpeedUnit.TEST);
@@ -52,6 +52,6 @@ public class ConvertSpeedsTest {
             Assert.assertTrue(e.getMessage().contains("'test' is not a valid value for SpeedUnit"));
             throw e;
         }
-    }*/
+    }
 
 }
